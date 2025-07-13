@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Git
+.git
+.gitignore
+
+# Python virtual environments
+venv/
+ENV/
+
+# Byte code
+*.pyc
+*.pyo
+
+# Test, coverage, etc.
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Misc
+*.log
+*.sqlite3
+.idea/
+.vscode/

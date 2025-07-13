@@ -1,0 +1,24 @@
+{
+    // Use virtualenv interpreter if present, fallback to system python
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+
+    // Formatting & linting
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+        "source.organizeImports",
+        "source.fixAll"
+    ],
+    "python.formatting.provider": "black",
+
+    // Linting
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": ["--max-line-length=88"],
+
+    // Testing
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": ["tests"],
+
+    // Env variables
+    "python.envFile": "${workspaceFolder}/.env"
+}
