@@ -13,3 +13,4 @@ ultralytics~=8.1
 pillow~=10.3
 requests~=2.32
 pydantic~=2.7
+pydantic-settings~=2.2
