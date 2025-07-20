@@ -34,11 +34,11 @@ class Settings(BaseSettings):
     bot_token: str | None = Field(default=None, validation_alias=AliasChoices("TG_BOT_TOKEN", "BOT_TOKEN"))
 
     # Database
-    postgres_user: str = "postgres"
-    postgres_password: str = "postgres"
-    postgres_db: str = "telegram_db"
+    postgres_user: str = "telegram"
+    postgres_password: str = "Seyaman@123"
+    postgres_db: str = "telegram_dw"
     db_port: int = 5432
-    db_host: str = "db"  # docker-compose service name
+    db_host: str = "localhost"  # docker-compose service name
 
 
 

@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: "{{ env_var('PG_HOST', 'localhost') }}"
+      port: "{{ env_var('PG_PORT', 5432) | int }}"
+      user: "{{ env_var('PG_USER', 'telegram') }}"
+      pass: "{{ env_var('PG_PASSWORD', 'Seyaman@123') }}"
+      dbname: "{{ env_var('PG_DB', 'telegram_dw') }}"
+      schema: analytics

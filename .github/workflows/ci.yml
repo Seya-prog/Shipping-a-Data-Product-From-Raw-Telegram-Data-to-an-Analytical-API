@@ -35,6 +35,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      - name: Run tests (placeholder)
+            - name: Set env vars for DB
         run: |
-          echo "No tests yet"
+          echo "POSTGRES_HOST=localhost" >> $GITHUB_ENV
+          echo "POSTGRES_PORT=5432" >> $GITHUB_ENV
+          echo "POSTGRES_USER=postgres" >> $GITHUB_ENV
+          echo "POSTGRES_PASSWORD=postgres" >> $GITHUB_ENV
+          echo "POSTGRES_DB=telegram_db" >> $GITHUB_ENV
+
+      - name: Load raw data into PostgreSQL
+        run: python src/load_raw.py
+
+      - name: Run dbt build & test
+        run: |
+          dbt deps
+          dbt build --profiles-dir dbt
+
+      - name: Generate dbt docs
+        run: dbt docs generate --profiles-dir dbt
+
