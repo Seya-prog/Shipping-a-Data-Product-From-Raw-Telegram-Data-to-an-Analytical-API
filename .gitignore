@@ -50,3 +50,11 @@ venv.bak/
 *.sqlite3
 session.session
 data/
+
+# dbt artifacts and generated files
+/dbt/target/
+/dbt/compiled/
+/dbt/packages/
+/dbt/logs/
+/dbt/manifest.json
+/dbt/run_results.json
