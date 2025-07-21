@@ -86,3 +86,36 @@ models:
         description: "Boolean indicating hashtag presence."
       - name: has_mention
         description: "Boolean indicating mention presence."
+
+  - name: fct_image_detections
+    description: "Fact table containing YOLO object detections linked to message and dimension keys. One row per detected object per message."
+    columns:
+      - name: message_id
+        description: "FK to fct_messages.message_id."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_messages')
+              field: message_id
+      - name: channel_id
+        description: "FK to dim_channels for easy slicing by channel."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_channels')
+              field: channel_id
+      - name: date_id
+        description: "FK to dim_dates for time-based aggregation."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: date_id
+      - name: object_class
+        description: "YOLO class label for detected object (e.g., person, car)."
+        tests:
+          - not_null
+      - name: confidence
+        description: "Detection confidence score between 0 and 1."
+        tests:
+          - not_null
