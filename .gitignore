@@ -42,8 +42,23 @@ logs/
 # VS Code
 .vscode/
 
+# Dagster
+/dagster_home/
+/compute_logs/
+
+# Local development
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data and logs
+/data/
+/logs/
+
 # JetBrains IDEs
 .idea/
+.DS_Store
 
 # Pytest cache
 .pytest_cache/
