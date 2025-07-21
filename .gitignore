@@ -33,15 +33,29 @@ venv.bak/
 
 # Docker
 *.log
+logs/
 
 # Env and secrets
 .env
 .env.*
 
 # VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
 
 # Pytest cache
 .pytest_cache/
+
+# Machine learning model weights
+*.pt
+*.pth
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
 
 # mypy
 .mypy_cache/
